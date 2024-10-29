@@ -1,8 +1,10 @@
 // "use client";
 // import { useEffect, useState } from 'react';
 // import ToolList from '../components/ToolList';
-import RentalForm from '../components/RentalForm';
+import RentalForm from "../components/RentalForm"
 // import { Tool } from '../types/tool';
+import Link from 'next/link';
+
 
 const Home: React.FC = () => {
   // const [tools, setTools] = useState<Tool[]>([]);
@@ -19,14 +21,21 @@ const Home: React.FC = () => {
   // }, []);
 
   return (
-    <div className="flex flex-col items-center p-6 bg-gray-100 min-h-screen">
-      <h1 className="text-3xl font-bold mb-6 text-teal-600">Tool Rental Application</h1>
-      <div className="w-full max-w-2xl bg-white rounded-lg shadow-lg p-6">
-        {/* <ToolList tools={tools} /> */}
-        <RentalForm />
-      </div>
-    </div>
-  );
-};
+    <div className="flex min-h-screen flex-col items-center justify-center bg-gray-100 p-4">
+      <h1 className="mb-4 text-4xl font-bold text-teal-600">Tool Rental Application</h1>
+      <p className="mb-8 text-lg text-gray-700">
+        Welcome to our Tool Rental Service! Rent the tools you need for your next project.
+      </p>
+      <Link href="/check-out">
 
-export default Home;
+      <button className="rounded bg-teal-500 px-6 py-2 font-semibold text-white shadow transition duration-200 hover:bg-teal-600">
+        Rent a Tool
+      </button>
+      </Link>
+      <Link href="/agreement">
+      <button className="mt-4 text-blue-500 hover:underline">View Rental History</button></Link>
+    </div>
+  )
+}
+
+export default Home
